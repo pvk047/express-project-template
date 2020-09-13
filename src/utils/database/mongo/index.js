@@ -3,7 +3,7 @@ import config from '../../../config'
 class DataBase {
   async connect() {
     try {
-      const { db } = await mongoose.createConnection(
+      const db = await mongoose.connect(
         config.database.mongo.connection_string,
         {
           useCreateIndex: true,
