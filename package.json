@@ -1,0 +1,57 @@
+{
+  "name": "s3-pre-singed-url-service",
+  "version": "1.0.0",
+  "description": "It will provide easy way to create and manage s3 Presigned dUrls of multiple Buckets.",
+  "main": "app.js",
+  "scripts": {
+    "dev": "nodemon ./src/bin/www  --exec babel-node",
+    "lint": "eslint src --color --fix",
+    "build": "rm -rf dist && babel src --out-dir dist --ignore node_modules",
+    "p": "prettier --write 'src/**/*.js'",
+    "test": "jest",
+    "start": "node dist/bin/www"
+  },
+  "keywords": [
+    "s3",
+    "pre-signed-url",
+    "file-upload-utils",
+    "pvk047"
+  ],
+  "author": "Veerakrishna Pachhipala (pvk047@gmail.com)",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/runtime": "^7.11.2",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "helmet": "^4.1.1",
+    "joi": "^17.2.1",
+    "mongoose": "^5.10.5",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.11.6",
+    "@babel/core": "^7.11.6",
+    "@babel/node": "^7.10.5",
+    "@babel/plugin-transform-runtime": "^7.11.5",
+    "@babel/preset-env": "^7.11.5",
+    "babel-jest": "^26.3.0",
+    "eslint": "^7.9.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "jest": "^26.4.2",
+    "nodemon": "^2.0.4",
+    "prettier": "^2.1.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint",
+      "pre-push": "npm test"
+    }
+  }
+}
